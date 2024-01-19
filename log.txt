@@ -1,0 +1,12 @@
+FASE ALPHA
+    17/01/2024
+        Layout da tabela
+        Testes de script(adição)
+        Funcionamento da tabela
+        Utilidade
+
+    18/01/2024
+        Inserção dos input no script
+        Organização da tabela
+        Testa remoção dos dados para outra tabela
+        Organização no codigo
