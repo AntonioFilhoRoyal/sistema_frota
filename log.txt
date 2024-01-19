@@ -10,3 +10,10 @@ FASE ALPHA
         Organização da tabela
         Testa remoção dos dados para outra tabela
         Organização no codigo
+
+    19/01/2024
+        Alteração geral da tabela
+        Troca da tag 'ul' para tag 'li'
+        renovação do script de Inserção
+        recompila codigo
+            

@@ -1,78 +1,62 @@
 console.log("Estou aqui!");
 
-const date = document.querySelector('#input-date');
-const client = document.querySelector('#input-client');
-const equipament = document.querySelector('#input-equipament');
-const amount = document.querySelector('#input-amount');
-const team = document.querySelector('#input-team');
-const driver = document.querySelector('#input-driver');
-const observation = document.querySelector('#input-observation');
-const state = document.querySelector('#input-state');
+const ul = document.querySelector('#ul');
 
-const btn = document.querySelector('.btn');
+const date = document.querySelector("#input-date");
+const client = document.querySelector("#input-client");
+const equipament = document.querySelector("#input-equipament");
+const amount = document.querySelector("#input-amount");
+const team = document.querySelector("#input-team");
+const driver = document.querySelector("#input-driver");
+const observation = document.querySelector("#input-observation");
+const state = document.querySelector("#input-state");
+
+const btn = document.querySelector(".btn");
 btn.addEventListener("click", (e) => {
-    if(!date && !client && !equipament && !amount && !team && !driver && !observation && !state) return;
+  if ( !date && !client && !equipament && !amount && !team && !driver && !observation && !state )return;
+    createTableList(date.value, client.value, equipament.value, amount.value, team.value, driver.value, observation.value, state.value);
+});
 
-    createTableList(date, client, equipament, amount, team, driver, observation, state);
-
-})
-
-
-
-const table = document.querySelector('.tbody');
-
-function createTableBodyTr(){
-    const tr = document.createElement('tr');
-    return tr;
+function createLi() {
+  const li = document.createElement("li");
+  return li;
 }
 
-function createTableBodyTd(){
-    const td = document.createElement('td');
-    return td;
+function createParagraphy(){
+    const p = document.createElement('p');
+    return p;
 }
 
-function createTableList(date, client, equipament, amount, team, driver, observation, state){
-    const tr = createTableBodyTr();
-    const td1 = createTableBodyTd();
-    const td2 = createTableBodyTd();
-    const td3 = createTableBodyTd();
-    const td4 = createTableBodyTd();
-    const td5 = createTableBodyTd();
-    const td6 = createTableBodyTd();
-    const td7 = createTableBodyTd();
-    const td8 = createTableBodyTd();
 
-    td1.innerHTML = date.value;
-    td2.innerHTML = client.value;
-    td3.innerHTML = equipament.value;
-    td4.innerHTML = amount.value;
-    td5.innerHTML = team.value;
-    td6.innerHTML = driver.value;
-    td7.innerHTML = observation.value;
-    td8.innerHTML = state.value;
-
-    table.appendChild(tr);
-
-    tr.appendChild(td1);
-    tr.appendChild(td2);
-    tr.appendChild(td3);
-    tr.appendChild(td4);
-    tr.appendChild(td5);
-    tr.appendChild(td6);
-    tr.appendChild(td7);
-    tr.appendChild(td8);
-    saveTable();
+function createTableList( date, client, equipament, amount, team, driver, observation, state) {
+    const li = createLi();
+    const p1 = createParagraphy();
+    const p2 = createParagraphy();
+    const p3 = createParagraphy();
+    const p4 = createParagraphy();
+    const p5 = createParagraphy();
+    const p6 = createParagraphy();
+    const p7 = createParagraphy();
+    const p8 = createParagraphy();
     
-}
+    p1.innerText = date;
+    p2.innerText = client;
+    p3.innerText = equipament;
+    p4.innerText = amount;
+    p5.innerText = team;
+    p6.innerText = driver;
+    p7.innerText = observation;
+    p8.innerText = state;
 
-function removeList(){
-    
-}
+    ul.appendChild(li);
+    li.appendChild(p1);
+    li.appendChild(p2);
+    li.appendChild(p3);
+    li.appendChild(p4);
+    li.appendChild(p5);
+    li.appendChild(p6);
+    li.appendChild(p7);
+    li.appendChild(p8);
 
-
-function saveTable(){
-    const list = table.querySelectorAll('tr');
-   // localStorage.setItem("dados", list);
-    console.log(list);
-
+    savee();
 }
