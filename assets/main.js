@@ -31,19 +31,32 @@ const arrayData = (value0, value1, value2, value3, value4, value5, value6) =>{
 
 const create = (value1) =>{
   const li = createLi();
-  li.innerText = `${value1[0]} - ${value1[1]} - ${value1[2]} - ${value1[3]} - ${value1[4]} - ${value1[5]} - ${value1[6]}`;
+  li.innerText = value1;
   ul.appendChild(li);
-  save(value1);
+  save();
   clear();
 }
 
-const save = (arrays) =>{
-  localStorage.setItem('frota', arrays);
+const save = () =>{
+  const listData = ul.querySelectorAll('li');
+  const arraysData = [];
+  for(arraysDt of listData){
+    let dataArray = arraysDt.innerText;
+    arraysData.push(dataArray);
+  }
+  
+  const arrayJSON = JSON.stringify(arraysData);
+  localStorage.setItem("frota", arrayJSON);
+
 }
 
-const recharge = () =>{
-  const list = localStorage.getItem('frota');
-  create(list);
+function reload(){
+  const list = localStorage.getItem("frota");
+  listArray = JSON.parse(list);
+
+  for(let dataArray of listArray){
+      create(dataArray);
+  }
 }
 
 const clear = () =>{
@@ -58,4 +71,4 @@ const clear = () =>{
 
 }
 
-recharge();
+reload();

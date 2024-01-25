@@ -16,4 +16,9 @@ FASE ALPHA
         Troca da tag 'ul' para tag 'li'
         renovação do script de Inserção
         recompila codigo
-            
+    24/01/2024
+        Refatoração do codigo
+        Novos testes de salvamento e recarregamento
+        TESTES: Passa array para Stringfy no localstorage (SALVAR)
+        TESTES: Recarrega passano array salvo como parser e repassando como elemento LI do HTML
+        
