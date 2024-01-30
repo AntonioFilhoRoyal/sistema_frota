@@ -8,8 +8,8 @@ const inputTeam = document.getElementById("input-team");
 const inputDriver = document.getElementById("input-driver");
 const inputObservation = document.getElementById("input-observation");
 const inputState = document.getElementById("input-state");
-//const inputEquipament = document.getElementById('input-equipament');
-
+const ul = document.querySelector(".ul-list-exit");
+const ule = document.querySelector(".ul-list");
 const btn = document.querySelector(".btn").addEventListener("click", (e) => {
   if (
     (!inputDate.value &&
@@ -18,7 +18,7 @@ const btn = document.querySelector(".btn").addEventListener("click", (e) => {
       !inputEquipament.value &&
       !inputTeam.value &&
       !inputDriver.value,
-    !inputObservation.value && !inputState.value)
+      !inputObservation.value && !inputState.value)
   )
     return;
   arrayData(
@@ -33,12 +33,28 @@ const btn = document.querySelector(".btn").addEventListener("click", (e) => {
   );
 });
 
-const ul = document.querySelector("ul");
-
 const createLi = () => {
   const li = document.createElement("li");
+  li.setAttribute("id", "li-list");
   return li;
 };
+
+const create = (value1) => {
+  const li = createLi();
+  li.innerText = value1;
+  ul.appendChild(li);
+  te(li);
+  save();
+  clear();
+};
+
+const te = (v) => {
+  const text = v.innerHTML;
+  const li = createLi();
+  li.innerText = text;
+  ule.appendChild(li);
+  save();
+}
 
 const arrayData = (
   value0,
@@ -52,15 +68,7 @@ const arrayData = (
 ) => {
   const arrays = [];
   arrays.push(value0, value1, value2, value3, value4, value5, value6, value7);
-  create(arrays);
-};
-
-const create = (value1) => {
-  const li = createLi();
-  li.innerText = value1;
-  ul.appendChild(li);
-  save();
-  clear();
+  create(arrays.join(" | "));
 };
 
 const save = () => {
@@ -75,17 +83,8 @@ const save = () => {
   localStorage.setItem("FROTA", arrayJSON);
 };
 
-function reload() {
-  const list = localStorage.getItem("FROTA");
-  listArray = JSON.parse(list);
-
-  for (let dataArray of listArray) {
-    create(dataArray);
-  }
-}
-
 const clear = () => {
-  inputClient.focus();
+  inputDate.focus();
   inputDate.value = "";
   inputClient.value = "";
   inputServiceOrder.value = "";
@@ -96,4 +95,15 @@ const clear = () => {
   inputState.value = "";
 };
 
+function reload() {
+  const list = localStorage.getItem("FROTA");
+  listArray = JSON.parse(list);
+
+  for (let dataArray of listArray) {
+    create(dataArray);
+  }
+}
+
 reload();
+
+// função para apaga o dado e pega-lo para outra lista
