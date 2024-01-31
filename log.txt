@@ -16,12 +16,21 @@ FASE ALPHA
         Troca da tag 'ul' para tag 'li'
         renovação do script de Inserção
         recompila codigo
+
     24/01/2024
         Refatoração do codigo
         Novos testes de salvamento e recarregamento
         TESTES: Passa array para Stringfy no localstorage (SALVAR)
         TESTES: Recarrega passano array salvo como parser e repassando como elemento LI do HTML
+
      29/01/2024
         Testes no script para adicionar e remover
         Ajustes no CSS, não permanente
-        Melhoria no codigo de style.css   
+        Melhoria no codigo de style.css
+        
+     30/01/2024
+        Redefinição geral do projeto
+        Criação da documentação
+        Inserção do react
+        Novo script de adicionar dados a tabela
+        NOVIDADE: Refatoração para codigo em React, usando setStates para minupulação

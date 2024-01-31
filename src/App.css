@@ -1,0 +1,136 @@
+*{
+  margin: 1px;
+  padding: 0;
+  box-sizing: border-box;
+ 
+}
+
+body{
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.App {
+  text-align: center;
+}
+
+.header {
+  min-height: 10vh;
+  background-color: #282c34;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.main{
+  width: 100%;
+  min-height: 50vh;
+  background-color: rgb(58, 0, 0);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.main-exit, .main-arrival{
+  padding: 2px;
+  width: 100%;
+  min-height: 20vh;
+
+  border: 1px solid #ffffff;
+}
+
+form{
+  width: 100%;
+}
+
+input, .btn-submit{
+  width: 12%;
+  height: 20px;
+}
+
+.btn-submit{
+  background-color: #001353;
+  color: #67e1ff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  border: none;
+  border-radius: 2px;
+
+  cursor: pointer;
+}
+
+.li{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+ul .btn-edit, .btn-delivery{
+  width: 12px;
+  height: 15px;
+
+  border: none;
+  border-radius: 50px;
+  
+  cursor: pointer;
+  transition: 0.8s ease-in-out;
+}
+
+.btn-edit{
+  background-color: #0051ff;
+}
+
+.btn-delivery{
+  background-color: rgb(5, 141, 0);
+}
+
+.btn-edit:hover{
+  background-color: #049bff;
+}
+
+.btn-delivery:hover{
+  background-color: rgb(8, 204, 2);
+}
+
+@media (max-width: 800px){
+  input{
+    width: 24%;
+  }
+  
+  .main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-exit, .main-arrival{
+    width: 100%;
+
+  }
+  
+  .li{
+    width: 90%;
+    
+  }
+
+}
+
+@media (max-width: 450px){
+  input{
+    width: 32%;
+  }
+  
+}
+
+@media (max-width: 350px){
+  input{
+    width: 100%;
+  }
+  
+}
