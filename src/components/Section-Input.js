@@ -227,7 +227,27 @@ tira o constructor, passa somente state. ex:
         </ul>
         </section>
         </main>
-        <div className='area-filter'></div>    
+        <aside className='area-filter'>
+            <div className='filter-driver'>
+              <h3>Filtrar pelo motorista</h3>
+              <div className='div-filter-driver'>
+              <input className='input-filter-driver' />
+              <button className='btn-filter-driver'>Pesquisar</button>
+              </div>
+              <ul className='ul-list-driver'></ul>
+            </div>
+            <div className='filter-equipament'>
+            <h3>Filtrar pelo equipamento</h3>
+              <div className='div-filter-equipament'>
+              <input className='input-filter-equipament' />
+              <button className='btn-filter-equipament'>Pesquisar</button>
+              </div>
+              <ul className='ul-list-equipament'></ul>
+            </div>
+            <div className='list-equipament'>
+              <h3>LISTA DOS EQUIPAMENTOS</h3>
+            </div>
+        </aside>    
       </div>
     </>
   }
